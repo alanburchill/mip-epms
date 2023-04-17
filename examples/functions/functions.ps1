@@ -62,8 +62,7 @@ function Assert-ServiceConnection {
 
         # Connect SCC, https://github.com/MicrosoftDocs/office-docs-powershell/issues/6716
         Connect-ExchangeOnline -CertificateThumbprint $CertificateThumbprint -AppID $AppId -Organization $Tenant -ShowBanner:$false -ShowProgress:$false -ConnectionURI "https://ps.compliance.protection.outlook.com/powershell-liveid/" | Out-Null
-        #New method to connect via SCC, commented out until confirmed it is working properly.
-        # Connect-IPPSSession -CertificateThumbprint $CertificateThumbprint -AppID $AppId -Organization $Tenant 
+
 
     } catch {
         Write-Log -Message "Failed to connect to Exchange Online and the SCC ($_.Exception)" -Level 'Error'
