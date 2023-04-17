@@ -564,7 +564,7 @@ function Assert-HeaderTransportRule {
             -HeaderMatchesPatterns "(?im)$($deployedLabel.guid)" `
             -SetHeaderName 'x-protective-marking' `
             -SetHeaderValue $HeaderExample `
-            -Comments $comment
+            -Comments $comment `
             | Out-Null
     } else {
         Write-Log -Message "`tCreating new transport rule '$ruleName'."
